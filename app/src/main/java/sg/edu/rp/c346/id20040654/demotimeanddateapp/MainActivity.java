@@ -33,8 +33,22 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 int hour = tp.getCurrentHour();
                 int minute = tp.getCurrentMinute();
+                String text = String.format("The time is %d:%d.", hour, minute);
 
-                tvDisplay.setText(String.format("The time is %d:%d.", hour, minute));
+                tvDisplay.setText(text);
+            }
+        });
+
+        btnDisplayDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                int day = dp.getDayOfMonth();
+                int month = dp.getMonth() + 1;
+                int year = dp.getYear();
+                String text = String.format("The date is %d/%d/%d.", day, month, year);
+
+                tvDisplay.setText(text);
             }
         });
     }
